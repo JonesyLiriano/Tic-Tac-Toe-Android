@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="tic_tac_toe_text">TIC TAC TOE</string>
+    <string name="modos_de_juego_text">MODOS DE JUEGO</string>
+    <string name="imagen_del_menu_principal_tictactoe_desc">Imagen del menu principal tictactoe</string>
+    <string name="text_del_menu_principal_modos_de_juego">imagen del menu principal modos de juego</string>
+    <string name="splash_gif_activity">Splash gif activity</string>
+    <string name="player_vs_player_titulo_text">Player VS Player</string>
+    <string name="reset_btn_text">reset</string>
+    <string name="button_tictactoe">Button TicTacToe</string>
+    <string name="player_vs_maquina_text">Player VS Maquina</string>
+    <string name="player2_score_text">0</string>
+    <string name="player_2_text">Player 2 Score:</string>
+    <string name="player1_score_text">0</string>
+    <string name="player_1_text">Player 1 Score:</string>
+    <string name="maquina_score_text">Maquina Score:</string>
+</resources>

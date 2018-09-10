@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPortadaBackground"
+    android:orientation="vertical"
+    android:theme="?android:attr/windowAnimationStyle"
+    tools:context="com.example.liriano.tictactoe.MainActivity">
+
+
+    <TextView
+        android:id="@+id/titulo_principal_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:text="@string/tic_tac_toe_text"
+        android:textColor="#ffffff"
+        android:textSize="40sp" />
+
+
+    <ImageView
+        android:id="@+id/gif_tic_tac_toe_portada_image_view"
+        android:layout_width="214dp"
+        android:layout_height="181dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="156dp"
+        android:contentDescription="@string/imagen_del_menu_principal_tictactoe_desc" />
+
+    <ImageView
+        android:id="@+id/png_game_modes"
+        android:layout_width="178dp"
+        android:layout_height="59dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="187dp"
+        android:contentDescription="@string/text_del_menu_principal_modos_de_juego"
+        app:srcCompat="@drawable/game_mode_portada_imagen" />
+
+    <ImageButton
+        android:id="@+id/imageButtonPVP"
+        android:layout_width="84dp"
+        android:layout_height="85dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/titulo_principal_text_view"
+        android:layout_marginBottom="83dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/boton_redondo"
+        android:contentDescription="@string/imagen_del_menu_principal_tictactoe_desc"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"
+        android:src="@drawable/pvp_imagen" />
+
+    <ImageButton
+        android:id="@+id/imageButtonPVM"
+        android:layout_width="84dp"
+        android:layout_height="85dp"
+        android:layout_alignEnd="@+id/gif_tic_tac_toe_portada_image_view"
+        android:layout_alignTop="@+id/imageButtonPVP"
+        android:layout_marginEnd="-4dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/boton_redondo"
+        android:contentDescription="@string/imagen_del_menu_principal_tictactoe_desc"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"
+        android:src="@drawable/pvm_imagen" />
+
+</RelativeLayout>

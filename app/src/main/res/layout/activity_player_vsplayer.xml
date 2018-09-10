@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.liriano.tictactoe.PlayerVSPlayerActivity"
+    android:weightSum="4">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/text_view_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/player_vs_player_titulo_text"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/button_reset"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="23dp"
+            android:text="@string/reset_btn_text" />
+
+        <TextView
+            android:id="@+id/player1s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button_reset"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="11dp"
+            android:text="@string/player_1_text"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/player1_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/button_reset"
+            android:layout_marginStart="54dp"
+            android:text="@string/player1_score_text"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/player2s"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button_reset"
+            android:layout_alignParentEnd="true"
+            android:text="@string/player_2_text"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/player2_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/button_reset"
+            android:layout_toEndOf="@+id/text_view_titulo"
+            android:text="@string/player2_score_text"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button_00"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border_bottom_right_button"
+            android:contentDescription="@string/button_tictactoe"
+            android:textSize="60sp"
+            tools:ignore="NestedWeights" />
+
+        <Button
+            android:id="@+id/button_01"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border_bottom_right_button"
+            android:contentDescription="@string/button_tictactoe"
+            android:textSize="60sp" />
+
+        <Button
+            android:id="@+id/button_02"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border_bottom_right_button"
+            android:contentDescription="@string/button_tictactoe"
+            android:textSize="60sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button_10"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="60sp"
+            android:contentDescription="@string/button_tictactoe"
+            tools:ignore="NestedWeights"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/border_bottom_right_button"/>
+
+        <Button
+            android:id="@+id/button_11"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="60sp"
+            android:contentDescription="@string/button_tictactoe"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/border_bottom_right_button"/>
+
+        <Button
+            android:id="@+id/button_12"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="60sp"
+            android:contentDescription="@string/button_tictactoe"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/border_bottom_right_button"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button_20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="60sp"
+            android:contentDescription="@string/button_tictactoe"
+            tools:ignore="NestedWeights"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/border_bottom_right_button"/>
+
+        <Button
+            android:id="@+id/button_21"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="60sp"
+            android:contentDescription="@string/button_tictactoe"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/border_bottom_right_button"/>
+
+        <Button
+            android:id="@+id/button_22"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="60sp"
+            android:contentDescription="@string/button_tictactoe"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/border_bottom_right_button"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

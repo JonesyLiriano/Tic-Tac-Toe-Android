@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:drawable="@drawable/tic_tac_toe_portada__frame_01" android:duration="200" />
+    <item android:drawable="@drawable/tic_tac_toe_portada__frame_02" android:duration="200" />
+    <item android:drawable="@drawable/tic_tac_toe_portada__frame_03" android:duration="200" />
+    <item android:drawable="@drawable/tic_tac_toe_portada__frame_04" android:duration="200" />
+    <item android:drawable="@drawable/tic_tac_toe_portada__frame_05" android:duration="200" />
+    <item android:drawable="@drawable/tic_tac_toe_portada__frame_06" android:duration="200" />
+    <item android:drawable="@drawable/tic_tac_toe_portada__frame_07" android:duration="200" />
+    <item android:drawable="@drawable/tic_tac_toe_portada__frame_08" android:duration="200" />
+    <item android:drawable="@drawable/tic_tac_toe_portada__frame_09" android:duration="200" />
+    <item android:drawable="@drawable/tic_tac_toe_portada__frame_10" android:duration="200" />
+    <item android:drawable="@drawable/tic_tac_toe_portada__frame_11" android:duration="200" />
+</animation-list>

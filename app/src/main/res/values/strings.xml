@@ -14,4 +14,5 @@
     <string name="player1_score_text">0</string>
     <string name="player_1_text">Player 1 Score:</string>
     <string name="maquina_score_text">Maquina Score:</string>
+    <string name="button_back_activity">button back activity</string>
 </resources>

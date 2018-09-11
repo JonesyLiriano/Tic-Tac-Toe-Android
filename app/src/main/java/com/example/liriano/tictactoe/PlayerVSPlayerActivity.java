@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,11 +21,12 @@ public class PlayerVSPlayerActivity extends AppCompatActivity implements View.On
             R.id.button_20,
             R.id.button_21,
             R.id.button_22,
-            R.id.button_reset
+            R.id.button_reset,
     };
     Button button_00,button_01,button_02,button_10,
             button_11,button_12,button_20,button_21,
             button_22,button_reset;
+    ImageButton button_back_activity;
     private int rondas = 0;
     private int ganadasPlayer1, ganadasPlayer2 = 0;
     TextView player1s, player2s;
@@ -50,168 +52,42 @@ public class PlayerVSPlayerActivity extends AppCompatActivity implements View.On
         button_reset = findViewById(R.id.button_reset);
         player1s = findViewById(R.id.player1_score);
         player2s = findViewById(R.id.player2_score);
-
-
+        button_back_activity = findViewById(R.id.back_button);
+        button_back_activity.setOnClickListener(this);
     }
-
-    private void verificarGanador() {
-        if (!gameOver) {
-            if (ganador()) {
-                gameOver = true;
-                if (!(turnoPlayer1)) {
-                    player1Win();
-                } else {
-                    player2Win();
-                }
-            } else if (rondas == 9) {
-                esEmpate();
-            }
-        }else{
-            Toast.makeText(this,"Favor presione el boton de restar, juego ya terminado...", Toast.LENGTH_SHORT).show();
-        }
-    }
-
 
     @Override
     public void onClick(View v) {
-
-
         switch (v.getId()){
             case R.id.button_00:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                    }
-                }
-                rondas++;
-                verificarGanador();
+                mJugada(button_00);
                 return;
             case R.id.button_01:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                    }
-                }
-
-                rondas++;
-                verificarGanador();
+                mJugada(button_01);
                 return;
             case R.id.button_02:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                    }
-                }
-                rondas++;
-                verificarGanador();
+                mJugada(button_02);
                 return;
             case R.id.button_10:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                    }
-                }
-                rondas++;
-                verificarGanador();
+                mJugada(button_10);
                 return;
             case R.id.button_11:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                    }
-                }
-                rondas++;
-                verificarGanador();
+                mJugada(button_11);
                 return;
             case R.id.button_12:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                    }
-                }
-                rondas++;
-                verificarGanador();
+                mJugada(button_12);
                 return;
             case R.id.button_20:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                    }
-                }
-                rondas++;
-                verificarGanador();
+                mJugada(button_20);
                 return;
             case R.id.button_21:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                    }
-                }
-                rondas++;
-                verificarGanador();
+                mJugada(button_21);
                 return;
             case R.id.button_22:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                    }
-                }
-                rondas++;
-                verificarGanador();
+                mJugada(button_22);
+                return;
+            case R.id.back_button:
+                finish();
                 return;
             case R.id.button_reset:
                 button_00.setText("");
@@ -240,22 +116,55 @@ public class PlayerVSPlayerActivity extends AppCompatActivity implements View.On
                     break;
         }
     }
+
+    private void mJugada(Button button) {
+        if (!gameOver) {
+            if (button.getText().toString().equals("")){
+                if (turnoPlayer1) {
+                    button.setText("X");
+                    turnoPlayer1 = false;
+                    rondas++;
+                    verificarGanador();
+                }else {
+                    button.setText("O");
+                    turnoPlayer1 = true;
+                    rondas++;
+                    verificarGanador();
+                }
+            }
+        }else{
+            Toast.makeText(this,"Favor presione el boton de restar, juego ya terminado...", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void verificarGanador() {
+        if (ganador()) {
+            gameOver = true;
+            if (!(turnoPlayer1)) {
+                player1Win();
+            } else {
+                player2Win();
+            }
+        } else if (rondas == 9) {
+            gameOver = true;
+            esEmpate();
+
+        }
+    }
     private boolean ganador(){
 
         if(button_00.getText().equals(button_01.getText())
                 && button_00.getText().equals(button_02.getText())
                 && !button_00.getText().equals("")){
             if(!(turnoPlayer1)){
-            button_00.setBackgroundColor(Color.GREEN);
-            button_01.setBackgroundColor(Color.GREEN);
-            button_02.setBackgroundColor(Color.GREEN);
+                button_00.setBackgroundColor(Color.GREEN);
+                button_01.setBackgroundColor(Color.GREEN);
+                button_02.setBackgroundColor(Color.GREEN);
             }else{
                 button_00.setBackgroundColor(Color.RED);
                 button_01.setBackgroundColor(Color.RED);
                 button_02.setBackgroundColor(Color.RED);
             }
-
-
             return true;
         }else if(button_00.getText().equals(button_10.getText())
                 && button_00.getText().equals(button_20.getText())
@@ -268,7 +177,7 @@ public class PlayerVSPlayerActivity extends AppCompatActivity implements View.On
                 button_00.setBackgroundColor(Color.RED);
                 button_10.setBackgroundColor(Color.RED);
                 button_20.setBackgroundColor(Color.RED);
-                }
+            }
             return true;
         }else if(button_01.getText().equals(button_11.getText())
                 && button_01.getText().equals(button_21.getText())
@@ -351,13 +260,12 @@ public class PlayerVSPlayerActivity extends AppCompatActivity implements View.On
         }else{
             return false;
         }
-
     }
+
     private void player1Win(){
         Toast.makeText(this,"Jugador 1 gano!!!", Toast.LENGTH_SHORT).show();
         ganadasPlayer1++;
         player1s.setText(String.valueOf(ganadasPlayer1));
-
 
     }
     private void player2Win(){

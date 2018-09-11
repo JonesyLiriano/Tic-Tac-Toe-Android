@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,12 +26,13 @@ public class PlayerVSMaquinaActivity extends AppCompatActivity implements View.O
     Button button_00,button_01,button_02,button_10,
             button_11,button_12,button_20,button_21,
             button_22,button_reset;
+    ImageButton button_back_activity;
     private int rondas = 0;
     private int ganadasPlayer1, ganadasPlayer2 = 0;
     TextView player1s, player2s;
     private boolean gameOver = false;
     private boolean turnoPlayer1 = true;
-    int eleccionMaquina;
+    private int eleccionMaquina;
 
 
     @Override
@@ -51,235 +53,42 @@ public class PlayerVSMaquinaActivity extends AppCompatActivity implements View.O
         button_reset = findViewById(R.id.button_reset);
         player1s = findViewById(R.id.player1_score);
         player2s = findViewById(R.id.player2_score);
-
+        button_back_activity = findViewById(R.id.back_button);
+        button_back_activity.setOnClickListener(this);
     }
-
-    private boolean verificarGanador() {
-        if (!gameOver) {
-            if (ganador()) {
-                gameOver = true;
-                if (!(turnoPlayer1)) {
-                    player1Win();
-
-                } else {
-                    MaquinaWin();
-                }
-                return true;
-            } else if (rondas == 9) {
-                esEmpate();
-                return true;
-            }
-        }else{
-            Toast.makeText(this,"Favor presione el boton de restar, juego ya terminado...", Toast.LENGTH_SHORT).show();
-        }
-        return false;
-    }
-
 
     @Override
     public void onClick(View v) {
-
-
         switch (v.getId()){
             case R.id.button_00:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    if(!turnoPlayer1) {
-                        simularMaquina();
-                    }
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;
-                        rondas++;
-                        if(verificarGanador())
-                        {return;}
-                        simularMaquina();
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                        rondas++;
-                        verificarGanador();
-                    }
-                }
-
+                mJugada(button_00);
                 return;
             case R.id.button_01:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    if(!turnoPlayer1) {
-                        simularMaquina();
-                    }
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;
-                        rondas++;
-                        if(verificarGanador())
-                        {return;}
-                        simularMaquina();
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                        rondas++;
-                        verificarGanador();
-                    }
-                }
+                mJugada(button_01);
                 return;
             case R.id.button_02:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    if(!turnoPlayer1) {
-                        simularMaquina();
-                    }
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;turnoPlayer1 = false;
-                        rondas++;
-                        if(verificarGanador())
-                        {return;}
-                        simularMaquina();
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                        rondas++;
-                        verificarGanador();
-                    }
-                }
+                mJugada(button_02);
                 return;
             case R.id.button_10:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    if(!turnoPlayer1) {
-                        simularMaquina();
-                    }
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;turnoPlayer1 = false;
-                        rondas++;
-                        if(verificarGanador())
-                        {return;}
-                        simularMaquina();
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                        rondas++;
-                        verificarGanador();
-                    }
-                }
+                mJugada(button_10);
                 return;
             case R.id.button_11:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    if(!turnoPlayer1) {
-                        simularMaquina();
-                    }
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;turnoPlayer1 = false;
-                        rondas++;
-                        if(verificarGanador())
-                        {return;}
-                        simularMaquina();
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                        rondas++;
-                        verificarGanador();
-                    }
-                }
+                mJugada(button_11);
                 return;
             case R.id.button_12:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    if(!turnoPlayer1) {
-                        simularMaquina();
-                    }
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;turnoPlayer1 = false;
-                        rondas++;
-                        if(verificarGanador())
-                        {return;}
-                        simularMaquina();
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                        rondas++;
-                        verificarGanador();
-                    }
-                }
+                mJugada(button_12);
                 return;
             case R.id.button_20:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    if(!turnoPlayer1) {
-                        simularMaquina();
-                    }
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;turnoPlayer1 = false;
-                        rondas++;
-                        if(verificarGanador())
-                        {return;}
-                        simularMaquina();
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                        rondas++;
-                        verificarGanador();
-                    }
-                }
+                mJugada(button_20);
                 return;
             case R.id.button_21:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    if(!turnoPlayer1) {
-                        simularMaquina();
-                    }
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;turnoPlayer1 = false;
-                        rondas++;
-                        if(verificarGanador())
-                        {return;}
-                        simularMaquina();
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                        rondas++;
-                        verificarGanador();
-                    }
-                }
+                mJugada(button_21);
                 return;
             case R.id.button_22:
-                if(!(((Button) v).getText().toString().equals(""))){
-                    if(!turnoPlayer1) {
-                        simularMaquina();
-                    }
-                    return;
-                }else {
-                    if (turnoPlayer1) {
-                        ((Button) v).setText("X");
-                        turnoPlayer1 = false;turnoPlayer1 = false;
-                        rondas++;
-                        if(verificarGanador())
-                        {return;}
-                        simularMaquina();
-
-                    } else {
-                        ((Button) v).setText("O");
-                        turnoPlayer1 = true;
-                        rondas++;
-                        verificarGanador();
-                    }
-                }
+                mJugada(button_22);
+                return;
+            case R.id.back_button:
+                finish();
                 return;
             case R.id.button_reset:
                 button_00.setText("");
@@ -309,8 +118,33 @@ public class PlayerVSMaquinaActivity extends AppCompatActivity implements View.O
                 break;
         }
     }
+
+    private void mJugada(Button button) {
+        if (!gameOver) {
+            if (!(button.getText().toString().equals("")) && !turnoPlayer1) {
+                simularMaquina();
+            } else {
+                if (turnoPlayer1) {
+                    button.setText("X");
+                    turnoPlayer1 = false;
+                    rondas++;
+                    if (verificarGanador()) {
+                        return;
+                    }
+                    simularMaquina();
+                } else {
+                    button.setText("O");
+                    turnoPlayer1 = true;
+                    rondas++;
+                    verificarGanador();
+                }
+            }
+        }else{
+            Toast.makeText(this,"Favor presione el boton de restar, juego ya terminado...", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void simularMaquina(){
-        if(!gameOver) {
             eleccionMaquina = (int) (Math.random() * 9) + 1;
             switch (eleccionMaquina) {
                 case 1:
@@ -344,7 +178,25 @@ public class PlayerVSMaquinaActivity extends AppCompatActivity implements View.O
                     break;
             }
         }
+
+    private boolean verificarGanador() {
+         if (ganador()) {
+                gameOver = true;
+                if (!(turnoPlayer1)) {
+                    player1Win();
+                } else {
+                    MaquinaWin();
+                }
+                return true;
+            } else if (rondas == 9) {
+                gameOver = true;
+                esEmpate();
+                return true;
+            }else {
+             return false;
+         }
     }
+
     private boolean ganador(){
 
         if(button_00.getText().equals(button_01.getText())
@@ -359,8 +211,6 @@ public class PlayerVSMaquinaActivity extends AppCompatActivity implements View.O
                 button_01.setBackgroundColor(Color.RED);
                 button_02.setBackgroundColor(Color.RED);
             }
-
-
             return true;
         }else if(button_00.getText().equals(button_10.getText())
                 && button_00.getText().equals(button_20.getText())

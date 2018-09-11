@@ -16,8 +16,6 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
     Animation zoomin, zoomout;
     ImageButton imageButtonPVP, imageButtonPVM;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,12 +40,6 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
         //Onclick Listener
         imageButtonPVP.setOnClickListener(this);
         imageButtonPVM.setOnClickListener(this);
-
-
-
-
-
-
 
     }
     @Override
